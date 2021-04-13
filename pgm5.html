@@ -1,0 +1,57 @@
+<html>
+<head>
+<script type="text/javascript">
+function validateForm() {
+  var w = document.forms["myForm"]["fname"].value;
+  var x = document.forms["myForm"]["gender"].value;
+  var y = document.forms["myForm"]["d"].value;
+  var z = document.forms["myForm"]["phone"].value;
+  if (w == "") {
+    alert("Please enter name");
+    return false;
+  }
+  if (x == "") {
+    alert("Please enter gender");
+    return false;
+  }
+  if (y == "") {
+    alert("Please enter date");
+    return false;
+  }
+  if (z == "") {
+    alert("Please enter phone number");
+    return false;
+  }
+  if (!/^[a-zA-Z]*$/.test(w))
+  {
+  alert ("invalid name..use charaters only");
+  return false;
+  }
+  if(!/^[MmFf01]$/.test(x))
+{
+alert ("invalid gender format only m/f or 0/1");
+return false;
+}
+  if (isNaN(z) || (z.length!=10))
+    {alert("enter valid phno");
+    return false;}
+  else{
+    return true;}
+  
+  }
+</script>
+</head>
+<body><form name="myForm" onsubmit="return validateForm()" method="post">
+<table border="1">
+<tr><th>
+Name:</th><th> <input type="text" name="fname"></th></tr>
+<tr><th>
+Gender:</th><th><input type="text" name="gender"></th></tr>
+<tr><th>
+date:</th><th><input type="date"  max="2021-02-25" min="2021-02-20" name="d"></th></tr>
+<tr><th>
+phn no:</th><th><input type="text" name="phone"></th></tr>
+</table>
+<input type="submit" value="Submit">
+</form></body>
+<html>
